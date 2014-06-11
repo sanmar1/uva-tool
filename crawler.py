@@ -5,7 +5,10 @@ import urllib2
 from urlparse import urljoin
 from BeautifulSoup import BeautifulSoup
 import sys, os
+<<<<<<< HEAD
 import string
+=======
+>>>>>>> b0cace0a3eae31b194db37fc5b65c7abe686be93
 
 URL_BASE = "http://uva.onlinejudge.org/external"
 URL_FORMAT = URL_BASE + "/%s/%s.html"
@@ -42,12 +45,17 @@ def get_title_from_soup(soup, question_num_str):
         index = title_raw.find('-')
         if index != -1:
             title_raw = title_raw[index + 2:]
+<<<<<<< HEAD
     #http://stackoverflow.com/questions/295135/turn-a-string-into-a-valid-filename-in-python
     title_cleaned = "%s_%s" % (question_num_str, title_raw.strip().lower().replace(' ', '_'))
     valid_chars = "-_.() %s%s" % (string.ascii_letters, string.digits)
     title_cleaned2 = ''.join(c for c in title_cleaned if c in valid_chars)
     #print title_cleaned2
     return title_cleaned2
+=======
+    title_cleaned = "%s_%s" % (question_num_str, title_raw.strip().lower().replace(' ', '_'))
+    return title_cleaned
+>>>>>>> b0cace0a3eae31b194db37fc5b65c7abe686be93
 
 def get_question_name(question_num_str, acm_root):
     # print clause is for shell variable setting
@@ -110,10 +118,9 @@ def do_craw(question_num_str, acm_root):
     build_url(question_num_str)
     soup = get_soup_from_url(target_url)
     html_data, title, input_data, output_data = parse(soup, question_num_str)
-    
+
     # create question root directory
     question_root = "%s/%s" % (acm_root, title)
-
     if not os.path.exists(question_root):
         os.mkdir(question_root)
 
@@ -125,6 +132,7 @@ def do_craw(question_num_str, acm_root):
         html_path = "%s/%s.html" % (question_root, title)
         input_path = "%s/test_%s.txt" % (question_root, title)
         output_path = "%s/expect_%s.txt" % (question_root, title)
+
         src_path = "%s/%s.cpp" % (question_root, title)
         
         # write files
@@ -150,6 +158,7 @@ using namespace std;
 int main() {
 
   return 0;
+=======
 }
 """
         write_to_file(src_content, src_path)

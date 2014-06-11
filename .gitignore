@@ -40,3 +40,9 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+#Personal files of solutions
+uva/
+
+#ignore temporal files
+*~

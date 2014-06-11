@@ -1,0 +1,25 @@
+{
+    "name": "uva-node",
+    "description": "UVa Command Line Tool",
+    "version": "0.1.4",
+    "author": "Lucas Tan",
+    "homepage": "https://github.com/lucastan/uva-node",
+    "bugs": "https://github.com/lucastan/uva-node/issues",
+    "keywords": [ "uva", "programming", "competitive", "competition" ],
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/lucastan/uva-node.git"
+    },
+    "engines": {
+        "node": ">=0.10.0"
+    },
+    "main": "index",
+    "bin": {
+        "uva": "./index.js"
+    },
+    "readmeFilename": "README.md",
+    "dependencies" :
+      { "sprintf" : ">=0.1.1"
+      , "colors" : ">=0.6.0"
+      }
+}

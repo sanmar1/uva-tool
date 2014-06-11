@@ -56,7 +56,11 @@ EXPECT_FILE_PREFIX="expect_"
 RESULT_FILE_PREFIX="result_"
 
 # file type
+<<<<<<< HEAD
 SOURCE_FILE_TYPE=".cpp"
+=======
+SOURCE_FILE_TYPE=".c"
+>>>>>>> b0cace0a3eae31b194db37fc5b65c7abe686be93
 DATA_FILE_TYPE=".txt"
 
 # path for test data file
@@ -457,7 +461,7 @@ submit_to_uva()
     echo "You are going to submit your code to uva website."
     register_your_uva_account
     echo "Start to submit your code."
-    echo "node $UVA_NODE send $QUESTION_ID $SOURCE_CODE_PATH"
+
     node $UVA_NODE send $QUESTION_ID $SOURCE_CODE_PATH
 
     echo
@@ -521,10 +525,23 @@ skip_command()
     shift 2
 }
 
+<<<<<<< HEAD
 # Use c++
 select_compile_tool()
 {
     COMPILE_COMMAND="g++"
+=======
+# detect clang installed, or else use gcc
+select_compile_tool()
+{
+    which clang > /dev/null 2>&1
+    if [ $? -eq 0 ]
+    then
+        COMPILE_COMMAND="clang"
+    else
+        COMPILE_COMMAND="gcc"
+    fi
+>>>>>>> b0cace0a3eae31b194db37fc5b65c7abe686be93
     echo "Use $COMPILE_COMMAND to compile source code."    
 }
 

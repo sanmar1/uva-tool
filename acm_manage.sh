@@ -457,7 +457,7 @@ submit_to_uva()
     echo "You are going to submit your code to uva website."
     register_your_uva_account
     echo "Start to submit your code."
-    echo "node $UVA_NODE send $QUESTION_ID $SOURCE_CODE_PATH"
+
     node $UVA_NODE send $QUESTION_ID $SOURCE_CODE_PATH
 
     echo
