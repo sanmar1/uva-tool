@@ -1,0 +1,3 @@
+[submodule "uva-node"]
+	path = uva-node
+	url = https://github.com/lucastan/uva-node.git
